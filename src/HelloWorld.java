@@ -8,9 +8,9 @@ public class HelloWorld {
 
 
     public static void  main(String[] args){
-        println("Test!");
-        println("Test!");
-        //System.out.print("");
+        println("Привет, мир!");
+        println("Мир, ты слышишь меня?!");
+        System.out.print("Я знаю что 5 + 7 = ");
         System.out.println(addituon(5,7));
     }
 }
