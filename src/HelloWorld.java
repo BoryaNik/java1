@@ -12,5 +12,7 @@ public class HelloWorld {
         println("Мир, ты слышишь меня?!");
         System.out.print("Я знаю что 5 + 7 = ");
         System.out.println(addituon(5,7));
+
+
     }
 }
