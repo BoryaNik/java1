@@ -13,7 +13,5 @@ public class HelloWorld {
         System.out.print("Я знаю что 5 + 7 = ");
         System.out.println(addituon(5,7));
 
-
-
     }
 }
