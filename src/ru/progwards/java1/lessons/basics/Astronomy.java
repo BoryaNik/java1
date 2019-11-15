@@ -27,8 +27,10 @@ public class Astronomy {
             double s=4*Pi*c*c;
             return s;
         }
-        public static Double earthVsMercury(){return earthVsMercury();}
-        public static Double earthVsJupiter(){return earthVsJupiter();}
+        public static Double earthVsMercury(){
+            return (earthSquare()/mercurySquare());}
+        public static Double earthVsJupiter(){
+            return (earthSquare()/jupiterSquare());}
 
         public static void main(String[] args) {
 
