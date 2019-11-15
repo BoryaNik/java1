@@ -9,6 +9,8 @@ public class AccuracyDoubleFloat {
 
         return (radius);
     }
+    public static double calculateAccuracy(double radius){
+        return (radius);}
     public static void main(String[] args) {
         double R = 6371.2;
         float R1= 6371.2f;
