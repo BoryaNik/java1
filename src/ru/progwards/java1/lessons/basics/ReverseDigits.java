@@ -13,7 +13,7 @@ public class ReverseDigits {
         return a;
 }
     public static void main (String[]args) {
-        reverseDigits(246);
+        reverseDigits(123);
 
     }
 }
