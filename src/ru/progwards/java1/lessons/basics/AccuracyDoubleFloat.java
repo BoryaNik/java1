@@ -3,14 +3,14 @@ package ru.progwards.java1.lessons.basics;
 public class AccuracyDoubleFloat {
     public static double volumeBallDouble(double radius){
 
-        return volumeBallDouble (radius);
+        return 4.0/3.0*3.14*6371.2*6371.2*6371.2;
     }
     public static float volumeBallFloat(float radius){
-
-        return volumeBallFloat(radius);
+        float Pi = 3.14f;
+        return (float) (4/3*3.14f*6371.2*6371.2*6371.2);
     }
     public static double calculateAccuracy(double radius){
-        return calculateAccuracy (radius);
+        return (4.0/3.0*3.14*6371.2*6371.2*6371.2)/(4/3*3.14f*6371.2*6371.2*6371.2);
     }
     public static void main(String[] args) {
         float Pi = 3.14f;
@@ -20,9 +20,7 @@ public class AccuracyDoubleFloat {
         System.out.println(volumeBallFloat);
         System.out.println(volumeBallDouble/volumeBallFloat);
 
-
     }
-
-
 }
+
 
