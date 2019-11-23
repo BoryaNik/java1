@@ -11,7 +11,7 @@ public class CyclesGoldenFibo {
         return fiboNumber (n-2);
             else if(n<=10);
             {return fiboNumber(n-55);}
-            //else {return (fiboNumber(n-1)+fiboNumber(n-2));}
+
 
     }
     public static boolean isGoldenTriangle(int a, int b, int c){
