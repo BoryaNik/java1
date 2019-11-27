@@ -1,17 +1,17 @@
 package ru.progwards.java1.lessons.compare_if_cycles;
 
-public class CyclesGoldenFibo {
-    public static boolean containsDigit(int number, int digit){
-        if(number>=0&&number<=1)
-            return true;
-        else {return false;}
-    }
-    public static int fiboNumber(int n){
-        if (n == 3)
-        return fiboNumber (2);
-            if(n==10);
-            return fiboNumber(55);
 
+        public class CyclesGoldenFibo {
+            public static boolean containsDigit(int number, int digit){
+                if(number>=0&&number<=1)
+                    return true;
+                else {return false;}
+            }
+            public static int fiboNumber(int n){
+                if (n == 3)
+                    return fiboNumber (2);
+                if(n==10);
+                return fiboNumber(55);
 
     }
     public static boolean isGoldenTriangle(int a, int b, int c){
