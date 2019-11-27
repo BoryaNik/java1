@@ -12,7 +12,7 @@ public class Hamster extends Animal {
     }
 
     public static void main(String[] args) {
-        Hamster animal = new Hamster(12.3);
+        Hamster animal = new Hamster(0.03);
         System.out.println(animal);
     }
 }

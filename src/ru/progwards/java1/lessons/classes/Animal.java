@@ -19,7 +19,7 @@ public class Animal {
 
 
     public double getWeight() { //2.1
-        double a=1.0;
+        double a=1d;
         return a;
     }
     public double getFoodCoeff(){ //2.2
@@ -36,12 +36,12 @@ public class Animal {
 
     //@Override
     public String toStringFull(){
-        return ("I am"+getKind()+ ",eat"+ getFoodKind()+" "+calculateFoodWeight());
+        return ("I am "+getKind()+ ",eat "+ getFoodKind()+" "+calculateFoodWeight());
     }
 
 
     public static void main(String[] args) {
-        Animal animal = new Animal(25);
+        Animal animal = new Animal(203);
         System.out.println(animal);
     }
 }

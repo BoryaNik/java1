@@ -1,8 +1,8 @@
 package ru.progwards.java1.lessons.classes;
 
 public class ComplexNum {
-    int a, b;
-
+    int a;
+    int b;
     public ComplexNum(int a, int b) {
         this.a = a;
         this.b = b;
@@ -28,8 +28,8 @@ public class ComplexNum {
                 (b * c - a * d) / (c * c + d * d));
     }
     public static void main(String[] args) {
-        ComplexNum a = new ComplexNum(5, 5);
-        ComplexNum b = new ComplexNum(6, 6);
+        ComplexNum a = new ComplexNum(2, 2);
+        ComplexNum b = new ComplexNum(1, 1);
         System.out.println(a.add(a, b));
         System.out.println(a.sub(a, b));
         System.out.println(a.mul(a, b));

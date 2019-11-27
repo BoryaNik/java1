@@ -4,7 +4,7 @@ public class Duck extends Animal{
     static double foodCoeff = 0.04;
 
     Duck() {
-        super(AnimalKind.DUCK, FoodKind.CORN, 0.04d, foodCoeff);
+        super(AnimalKind.DUCK, FoodKind.CORN, 0.04, foodCoeff);
     }
 
     Duck(double weight) {
@@ -12,7 +12,7 @@ public class Duck extends Animal{
     }
 
     public static void main(String[] args) {
-        Duck animal = new Duck(3);
+        Duck animal = new Duck(0.04);
         System.out.println(animal);
     }
 }
