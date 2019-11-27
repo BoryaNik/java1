@@ -1,18 +1,18 @@
 package ru.progwards.java1.lessons.classes;
 
-public class Duk extends Animal{
+public class Duck extends Animal{
     static double foodCoeff = 0.04;
 
-    Duk() {
+    Duck() {
         super(AnimalKind.DUCK, FoodKind.CORN, 0.04d, foodCoeff);
     }
 
-    Duk(double weight) {
+    Duck(double weight) {
         super(AnimalKind.DUCK, FoodKind.CORN, weight, foodCoeff);
     }
 
     public static void main(String[] args) {
-        Duk animal = new Duk(3);
+        Duck animal = new Duck(3);
         System.out.println(animal);
     }
 }
