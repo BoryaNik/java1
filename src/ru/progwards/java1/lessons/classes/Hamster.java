@@ -4,7 +4,7 @@ public class Hamster extends Animal {
     static double foodCoeff = 0.03;
 
     Hamster() {
-        super(AnimalKind.HAMSTER, FoodKind.CORN, 0.03, foodCoeff);
+        super(AnimalKind.HAMSTER, FoodKind.CORN, 0d, foodCoeff);
     }
 
     Hamster(double weight) {
@@ -12,7 +12,7 @@ public class Hamster extends Animal {
     }
 
     public static void main(String[] args) {
-        Hamster animal = new Hamster(0.03);
+        Hamster animal = new Hamster(5);
         System.out.println(animal);
     }
 }
