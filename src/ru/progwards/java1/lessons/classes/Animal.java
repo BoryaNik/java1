@@ -55,7 +55,8 @@ static enum FoodKind {UNKNOWN, HAY, CORN}
     public double calculateFoodWeight() {
         return getWeight() * getFoodCoeff();
     }
-
+    public String toStringFull()
+    {return "I am"+animalKind +",eat"+foodCoeff+calculateFoodWeight();}
     public static void main(String[] args) {
         Animal animal = new Animal();
         System.out.println(animal);
