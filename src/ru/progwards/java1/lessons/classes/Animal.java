@@ -1,47 +1,65 @@
 package ru.progwards.java1.lessons.classes;
 
 public class Animal {
-    public Animal(double weight) {double a=getWeight();
+static enum AnimalKind {ANIMAL, COW, HAMSTER, DUCK}
+static enum FoodKind {UNKNOWN, HAY, CORN}
+
+    private AnimalKind animalKind = AnimalKind.ANIMAL;
+    private FoodKind foodKind = FoodKind.UNKNOWN;
+
+    private double weight = 1d;
+    double foodCoeff = 0.02;
+
+    Animal() {
     }
 
-    public AnimalKind animalKind = AnimalKind.ANIMAL;
+    Animal(double weight) {
+        this.weight = weight;
+    }
 
-    enum AnimalKind {ANIMAL, COW, HAMSTER, DUCK}
-
-    public FoodKind getFoodKind() { FoodKind c= FoodKind.UNKNOWN; return c;}
-
-    enum FoodKind {UNKNOWN, HAY, CORN}
-
-    Animal(AnimalKind animalKind, FoodKind foodKind, double weight, double foodCoeff) {
+    Animal(AnimalKind animalKind, FoodKind food, double weight, double foodCoeff) {
         this.animalKind = animalKind;
+        this.foodKind = food;
+        this.weight = weight;
+        this.foodCoeff = foodCoeff;
+    }
 
+    public AnimalKind getKind() {
+        return animalKind;
+    }
+
+    public FoodKind getFoodKind() {
+        return foodKind;
+    }
+
+    @Override
+    public String toString() {
+        return "I am " + getKind() + ", eat " + getFoodKind() + " " + calculateFoodWeight();
+    }
+
+    public double getWeight() {
+        return weight;
+    }
+
+    void setFoodCoeff(double foodCoeff) {
+        this.foodCoeff = foodCoeff;
+    }
+    public double getFoodCoeff() {
+        return foodCoeff;
+    }
+    public double getCoeff() {
+        return foodCoeff;
     }
 
 
-    public double getWeight() { //2.1
-        double a=1d;
-        return a;
+    public double calculateFoodWeight() {
+        return getWeight() * getFoodCoeff();
     }
-    public double getFoodCoeff(){ //2.2
-        double b=0.02;
-        return b;
-    }
-
-    public double calculateFoodWeight(){ //2.6
-        double s =  getWeight()*getFoodCoeff();
-        return s;
-    }
-    public AnimalKind getKind(){return animalKind;}
-
-
-    //@Override
-    public String toStringFull(){
-        return ("I am "+getKind()+ ",eat "+ getFoodKind()+" "+calculateFoodWeight());
-    }
-
 
     public static void main(String[] args) {
-        Animal animal = new Animal(203);
+        Animal animal = new Animal();
         System.out.println(animal);
     }
+
 }
+
