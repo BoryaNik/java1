@@ -3,34 +3,41 @@ package ru.progwards.java1.lessons.arrays;
 import java.util.Arrays;
 
 public class Eratosthenes {
-    int N = 0;
-
     private boolean[] sieve;
 
-    public Eratosthenes(int N){
-        this.N = N;
-        sieve = new boolean[N];
-        Arrays.fill(sieve, true);
-        sift();
-    }
-    private void sift(){
-        int i = 2; int j = 2;
-        for (i = 2; i < (N - 1); i++) {
-            for (j = 2; j < i; j++){
-                if ((i % j) == 0) {
-                    sieve[i] = false;
-                    break;
-                }
-            }
+    public Eratosthenes(int N) {
+        sieve = new boolean[N + 1];
+        if(N > 1) {
+            Arrays.fill(sieve, true);
+            sieve[0] = false;
+            sieve[1] = false;
+            sift();
+        } else {
+            Arrays.fill(sieve, false);
         }
     }
-    public boolean isSimple(int n){
-        return sieve [n];
+
+    private void sift() {
+        int i = sieve.length;
+        int x;
+        for (int k = 2; k < i; k++)
+            if (sieve[k]) {
+                x = k * 2;
+                while (x < i) {
+                    sieve[x] = false;
+                    x += k;
+                }
+            }
+    }
+
+    public boolean isSimple(int n) {
+        return sieve[n];
     }
 
     public static void main(String[] args) {
-        Eratosthenes E1 = new Eratosthenes(1000);
-        System.out.println(E1.isSimple(299));
+        Eratosthenes a = new Eratosthenes(10);
+        System.out.println(Arrays.toString(a.sieve));
+        System.out.println(a.isSimple(10));
     }
 }
 
