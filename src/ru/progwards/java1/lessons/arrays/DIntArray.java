@@ -28,11 +28,22 @@ public class DIntArray {
         System.out.println(Arrays.toString(n1));
     }
 
-    public static void main(String[] args) {
-        System.out.println();
-    }
+
+
     public int at(int pos){
         return n[pos];
+    }
+    @Override
+    public String toString() {
+        return Arrays.toString(n);
+    }
+
+    public void print() {
+        System.out.println(this.toString());
+    }
+
+    public static void main(String[] args) {
+
     }
 
 }
