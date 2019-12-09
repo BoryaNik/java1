@@ -8,8 +8,8 @@ public class DIntArray {
     public void add(int num){
 
         int[] n1 = new int[n.length + 1];//{1,2,3};
-        System.out.println(Arrays.toString(n));
-        n = Arrays.copyOf(n, n.length + 1);
+        //System.out.println(Arrays.toString(n));
+        //n = Arrays.copyOf(n, n.length + 1);
         System.arraycopy(n, 0, n, 0, n.length);
         n1[n.length] = num;
         n = n1;
@@ -19,7 +19,7 @@ public class DIntArray {
     public void atInsert(int pos, int num) {
         int[] n1 = new int[n.length + 1];//{1,2,3};
         System.arraycopy(n, 0, n1, 0, pos);
-        System.arraycopy(n1, pos + 1, n1, pos, n1.length - pos - 1);
+        System.arraycopy(n1, pos , n1, pos+1, n1.length - pos );
         n1[pos] = num;
         n = n1;
 
