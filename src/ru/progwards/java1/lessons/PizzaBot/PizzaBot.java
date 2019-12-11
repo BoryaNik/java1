@@ -24,8 +24,8 @@ import ru.progwards.java1.testlesson.ProgwardsTelegramBot;
             ApiContextInitializer.init();
 
             PizzaBot bot = new PizzaBot();
-            bot.username ="P24pizza";
-            bot.token = "855300177:AAFvd5FhYIr2x3UbV8MCCPDgx4cqHIeNrk";
+            bot.username ="ProBoris24Pizzabot";
+            bot.token = "806072155:AAEzmV80xOoKcV6167p03ADQlpr8ncAMVYg";
             bot.start();
 
             bot.addTags("привет", "привет, здрасьте, здравствуй, добр, день, вечер, утро, hi, hello");
