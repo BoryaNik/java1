@@ -62,20 +62,19 @@ package ru.progwards.java1.lessons.interfaces;
         public boolean equals(Object anObject){    // H7
             if(anObject==this)
                 return true;
-            if(anObject == null|| getClass() !=anObject.getClass())
+            if(anObject == null|| anObject.getClass() !=this.getClass())
                 return false;
             Animal animal = (Animal)anObject;
             return Double.compare(animal.calculateFoodWeight(),this.calculateFoodWeight())==0;
         }
-        public interface FoodCompare {
-            public int compareFoodPrice();
-        }
+
+
         public double getFood1kgPrice() {
             switch (foodKind) {
                 case HAY:
-                    return 20;
+                    return 20d;
                 case CORN:
-                    return 50;
+                    return 50d;
                 case UNKNOWN:
                     //return 0;
             }
@@ -83,11 +82,13 @@ package ru.progwards.java1.lessons.interfaces;
         }
         public double getFoodPrice(){return calculateFoodWeight() * getFood1kgPrice();
         }
+
         public int compareFoodPrice(Animal aminal){    // 7
-            return Double.compare(getFoodPrice(),this.getFoodPrice());
+            return Double.compare(getFoodPrice(),aminal.getFoodPrice());
         }
 
         public int compareTo(Animal o){
+            if(o==this)return 0;
             double a= this.getWeight();
             double b =((Animal) o).getWeight();
             if(a==b)return 0;

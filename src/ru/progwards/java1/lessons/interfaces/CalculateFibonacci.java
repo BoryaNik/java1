@@ -42,7 +42,7 @@ public class CalculateFibonacci {
         return lastFibo;
     }
    public static void clearLastFibo(){
-        lastFibo =null;
+        lastFibo = null;
     }
 
     public static void main(String[] args) {
