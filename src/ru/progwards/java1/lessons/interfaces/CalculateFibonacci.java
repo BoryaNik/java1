@@ -32,6 +32,12 @@ static { lastFibo = new CacheInfo(); }
             this.fibo = n1;
         }
     }
+    public CacheInfo getLastFibo(){
+        return lastFibo;
+    }
+    public void clearLastFibo(){
+        lastFibo =null;
+    }
 
     public static void main(String[] args) {
 

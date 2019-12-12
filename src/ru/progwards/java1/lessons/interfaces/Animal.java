@@ -86,6 +86,13 @@ package ru.progwards.java1.lessons.interfaces;
         public int compareFoodPrice(Animal aminal){    // 7
             return Double.compare(getFoodPrice(),this.getFoodPrice());
         }
+        public int compareTo(Animal o){
+            double a= this.getWeight();
+            double b =((Animal) o).getWeight();
+            if(a==b)return 0;
+            if(a>b)return 1;
+            return -1;
+        }
 
         public static void main(String[] args) {
 
