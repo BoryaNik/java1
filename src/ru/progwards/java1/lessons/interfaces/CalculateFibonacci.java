@@ -1,9 +1,25 @@
 package ru.progwards.java1.lessons.interfaces;
 
 public class CalculateFibonacci {
-    public static int fiboNumber(int n){ //2.1 функция fiboNumber
+    static CacheInfo lastFibo;  // 2.3 staticheskaya peremennaya
+
+    static { lastFibo = new CacheInfo(); }
+
+    static class CacheInfo {    // 2.2 vlogenniy class
+
+        int n; //число, для которого рассчитываем Фибоначчи
+        int fibo; //  rezultat  rascheta
+
+        CacheInfo() { n = 1; }
+
+        CacheInfo(int n, int n1) {
+            this.n = n;
+            this.fibo = n1;
+        }
+    }
+    public static int fiboNumber(int n) {    //  2.1 iz zadachi 3 uroka 3 funkciya
         if (lastFibo.n == n) return lastFibo.fibo; // funkciya fiboNumber
-                                       //   2.4 staticheskaya peremennaya lastFibo
+        //   2.4 staticheskaya peremennaya lastFibo
         int first = 1;
         int next = 1;
         int b;
@@ -19,23 +35,13 @@ public class CalculateFibonacci {
         lastFibo.fibo = next;
         return next;
     }
+
     CalculateFibonacci() { lastFibo = new CacheInfo(); }
 
-    static CacheInfo lastFibo;             // 2.3
-static { lastFibo = new CacheInfo(); }
-    static class CacheInfo{               // 2.2
-        int n; // число, для которого рассчитываем Фибоначчи
-        int fibo; // результат расчета
-        CacheInfo() { n = 1; }
-        CacheInfo(int n, int n1) {
-            this.n = n;
-            this.fibo = n1;
-        }
-    }
-    public CacheInfo getLastFibo(){
+    CacheInfo getLastFibo(){
         return lastFibo;
     }
-    public void clearLastFibo(){
+    void clearLastFibo(){
         lastFibo =null;
     }
 
