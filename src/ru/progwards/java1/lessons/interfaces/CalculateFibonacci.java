@@ -38,10 +38,10 @@ public class CalculateFibonacci {
 
     CalculateFibonacci() { lastFibo = new CacheInfo(); }
 
-    CacheInfo getLastFibo(){
+   public static CacheInfo getLastFibo(){
         return lastFibo;
     }
-    void clearLastFibo(){
+   public static void clearLastFibo(){
         lastFibo =null;
     }
 
