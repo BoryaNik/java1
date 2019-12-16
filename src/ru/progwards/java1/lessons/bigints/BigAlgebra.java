@@ -12,7 +12,7 @@ public class BigAlgebra {
     }
 
 
-    static void fibonacci(int n) {
+    static BigInteger fibonacci(int n) {
         BigInteger[] arr = new BigInteger[n + 1];
 
         arr[0] = BigInteger.ZERO;
@@ -22,8 +22,8 @@ public class BigAlgebra {
         for (int i = 3; i <= n; i++) {
             arr[i] = arr[i - 1].add(arr[i - 2]);
         }
-
-        System.out.println(arr[n]);
+             return (arr[n]);
+        //System.out.println(arr[n]);
     }
     public static void main(String[] args) { }
 }
