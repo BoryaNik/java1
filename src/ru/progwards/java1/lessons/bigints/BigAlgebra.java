@@ -4,16 +4,15 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 
 public class BigAlgebra {
+
     static BigDecimal fastPow(BigDecimal num, int pow){
         BigDecimal b1 = new BigDecimal("924567");
         int n = 5;
         BigDecimal result = b1.pow(n); {return result;}
     }
 
-    public static void main(String[] args) {
 
-    }
-    public void fibonacci(int n) {
+    static void fibonacci(int n) {
         BigInteger[] arr = new BigInteger[n + 1];
 
         arr[0] = BigInteger.ZERO;
@@ -26,6 +25,6 @@ public class BigAlgebra {
 
         System.out.println(arr[n]);
     }
-
+    public static void main(String[] args) { }
 }
 
