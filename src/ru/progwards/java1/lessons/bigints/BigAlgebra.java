@@ -4,11 +4,16 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 
 public class BigAlgebra {
+    static BigDecimal fastPow(BigDecimal num, int pow) {
+switch (pow) {
+        case 0: return BigDecimal.ONE;
+        case 1: return num;
+        case 2: return num.multiply(num);
+    }
+    int pow2 = pow / 2;
+    BigDecimal t = num.multiply(num);
+        return pow % 2 == 0 ? fastPow(t, pow2) : num.multiply(fastPow(t, pow2));
 
-    static BigDecimal fastPow(BigDecimal num, int pow){
-        BigDecimal b1 = new BigDecimal("924567");
-        int n = 5;
-        BigDecimal result = b1.pow(n); {return result;}
     }
 
 
