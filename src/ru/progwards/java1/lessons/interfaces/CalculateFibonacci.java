@@ -20,7 +20,9 @@ public class CalculateFibonacci {
     public static int fiboNumber(int n) {    //  2.1 iz zadachi 3 uroka 3 funkciya
         if (lastFibo.n == n) return lastFibo.fibo; // funkciya fiboNumber
         //   2.4 staticheskaya peremennaya lastFibo
-        if(lastFibo==null) return lastFibo.fibo;
+        //if(lastFibo==null) return lastFibo.fibo;
+        CalculateFibonacci.fiboNumber(n);
+        CalculateFibonacci.clearLastFibo();
         int first = 0;
         int next = 1;
         int b;
