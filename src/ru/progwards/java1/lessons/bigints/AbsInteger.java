@@ -1,6 +1,6 @@
 package ru.progwards.java1.lessons.bigints;
 
-    public class AbsInteger{
+    public abstract class AbsInteger{
         public static AbsInteger add(AbsInteger num1, AbsInteger num2){
             long n1 = Long.parseLong(num1.toString());
             long n2 = Long.parseLong(num2.toString());
@@ -8,7 +8,7 @@ package ru.progwards.java1.lessons.bigints;
             if(res > -128 && res<127)
                 return  new ByteInteger((byte)res);
             else
-                return new ShortInteger((short) res);
+                return new IntInteger((int) res);
 
         }
 
