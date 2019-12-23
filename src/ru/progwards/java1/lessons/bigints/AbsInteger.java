@@ -8,7 +8,7 @@ package ru.progwards.java1.lessons.bigints;
             if(res > -128 && res<127)
                 return  new ByteInteger((byte)res);
             else
-                return new IntInteger((int) res);
+                return new ShortInteger((short) res);
 
         }
 
