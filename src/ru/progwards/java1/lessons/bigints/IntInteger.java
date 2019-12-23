@@ -1,13 +1,13 @@
 package ru.progwards.java1.lessons.bigints;
 
 public class IntInteger extends AbsInteger {
-    int b;
-    IntInteger(int b){
-        this.b=b;
-        b=100;
-    }
-    @Override
+    private int number;
     public String toString(){
-        return Integer.toString(b);}
+        return String.valueOf(number);
+    }
+    IntInteger(int number){
+        this.number = number;}
+    IntInteger(String str){
+        number = Integer.parseInt(str);}
 }
 

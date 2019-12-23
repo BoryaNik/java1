@@ -1,17 +1,15 @@
 package ru.progwards.java1.lessons.bigints;
 
 public class ByteInteger extends AbsInteger {
-    byte a;
-
-    ByteInteger(byte a) {
-        this.a = a;
-        n = 1;
-
+    private byte number;
+    ByteInteger(byte number){
+        this.number = number;
     }
-
-    @Override
-    public String toString() {
-        return Byte.toString(a);
+    ByteInteger(String str){
+        number = Byte.parseByte(str);
+    }
+    public String toString(){
+        return String.valueOf(number);
     }
 
 }

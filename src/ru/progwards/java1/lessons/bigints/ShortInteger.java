@@ -1,13 +1,12 @@
 package ru.progwards.java1.lessons.bigints;
 
 public class ShortInteger extends AbsInteger {
-    short s;
-
-    ShortInteger(short s){
-        this.s=s;
-        s=1;
-    }
-    @Override
+    private short number;
     public String toString(){
-        return Integer.toString(s);}
+        return String.valueOf(number);
+    }
+    ShortInteger(short number){
+        this.number = number;}
+    ShortInteger(String str){
+        number = Short .parseShort(str);}
 }
