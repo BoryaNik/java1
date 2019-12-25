@@ -1,30 +1,30 @@
 package ru.progwards.java1.lessons.io1;
 
 import java.io.*;
+import java.util.Scanner;
 
 public class LineCount {
-    public static void main(String[] args) throws IOException {
+    public static int calcEmpty(String fileName) {
+        int result = 0;
+        int result1 = -1;
+        String line= "";
 
-        System.out.println(calcEmpty("\n"));
+        try (FileReader reader = new FileReader(fileName);
+             Scanner scan = new Scanner(reader)) {
+            while (scan.hasNextLine()) {
+                String str = scan.nextLine();
+                if(str.trim().isEmpty())
+                    result++;
+            }
+        } catch (FileNotFoundException e) {
+            result = result1;
+        } catch (IOException e) {
+            result = result1;
+        }
+        return result;
     }
 
-    public static int calcEmpty(String fileName) {
-        final BufferedReader br = new BufferedReader(new StringReader("hello\n\nworld\n"));
-        String line = " ";
-        int empty = 0;
-        int error = -1;
-        while (true) {
-            try {
-                if (!((line = br.readLine()) != null)) break;
-            } catch (IOException e) {
-                empty = error;
-                //e.printStackTrace();
-            }if (line.trim().isEmpty()) {
-                empty++;
-            }
-            return error;
-        }
-        //System.out.println(empty);
-        return empty;
+    public static void main(String[] args) {
+
     }
 }
