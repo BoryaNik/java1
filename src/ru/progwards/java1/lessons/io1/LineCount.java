@@ -8,18 +8,23 @@ public class LineCount {
         System.out.println(calcEmpty("\n"));
     }
 
-    public static int calcEmpty(String fileName) throws IOException {
+    public static int calcEmpty(String fileName) {
         final BufferedReader br = new BufferedReader(new StringReader("hello\n\nworld\n"));
-        String line;
+        String line = " ";
         int empty = 0;
-        int error =-1;
-        while ((line = br.readLine()) != null) {
-            if (line.trim().isEmpty()) {
+        int error = -1;
+        while (true) {
+            try {
+                if (!((line = br.readLine()) != null)) break;
+            } catch (IOException e) {
+                empty = error;
+                //e.printStackTrace();
+            }if (line.trim().isEmpty()) {
                 empty++;
-            }else
-                return error;
+            }
+            return error;
         }
-        System.out.println(empty);
+        //System.out.println(empty);
         return empty;
     }
 }
