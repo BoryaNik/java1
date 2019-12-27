@@ -4,33 +4,32 @@ import java.io.*;
 import java.util.Scanner;
 
 public class CharFilter {
-    private static String deleteFilterChars (String s, String filter) {
-        StringBuilder delet = new StringBuilder();
-        int del = s.length();
-        for (int i = 0; i < del; i++) {
-            if (filter.indexOf(s.charAt(i)) < 0)
-                delet.append(s.charAt(i));
+    private static String deleteFilterChars (String string, String filter) {
+        StringBuilder stringBuilder = new StringBuilder();
+        int l = string.length();
+        for (int i = 0; i < l; i++) {
+            if (filter.indexOf(string.charAt(i)) < 0)
+                stringBuilder.append(string.charAt(i));
         }
-        return delet.toString();
+        return stringBuilder.toString();
     }
 
-
-    public static void filterFile(String inFileName,String outFileName, String filter) throws IOException{
-
-        FileReader fileReader = new FileReader( inFileName);
-        Scanner scanner  = new Scanner(fileReader);
-        PrintStream out = new PrintStream(new FileOutputStream(outFileName));
-        while (scanner.hasNextLine()){
-            String strFromFile = scanner.nextLine();
-            System.out.println(strFromFile);
-        }
-        try {
-            fileReader.close();
+    public static void filterFile(String inFileName, String outFileName, String filter) {
+        try (
+                FileReader fileReader = new FileReader(inFileName);
+                Scanner scanner = new Scanner(fileReader);
+                FileWriter fileWriter = new FileWriter(outFileName);
+        ) {
+            while (scanner.hasNextLine()) {
+                String str = scanner.nextLine();
+                str = deleteFilterChars(str,filter);
+                fileWriter.write(str);
+            }
         } catch (IOException e) {
-            e.printStackTrace();
             System.out.println(e.getMessage());
         }
     }
+
 
     public static void main(String[] args) {
 
