@@ -5,24 +5,23 @@ import java.math.BigDecimal;
 public class ArrayInteger { //3.0
     byte[] digits;
     int number;
-
     ArrayInteger() {
         int n = 10;
         digits = new byte[n];
-        //clear(n);
+        clear(n);
     }
-    ArrayInteger(int n) {    //3.1
+    ArrayInteger(int n) {
         digits = new byte[n];
-        //clear(n);
+        clear(n);
     }
     ArrayInteger(String value) {
         this();
         fromString(value);
     }
-    private void num1() {
-        num1(number);
+    private void clear() {
+        clear(number);
     }
-    private void num1(int count) {
+    private void clear(int count) {
         for (int i = 0; i < count; i++) digits[i] = 0;
         number = 0;
     }
@@ -39,10 +38,10 @@ public class ArrayInteger { //3.0
         }
         number = sig;
     }
-    void fromInt(BigDecimal value) {  //3.2
+    void fromInt(BigDecimal value) {
         fromString(value.toString());
     }
-    BigDecimal toInt() {           //3.3
+    BigDecimal toInt() {
         char[] s = new char[number];
         for (int i = number - 1, k = 0; i >= 0; i--, k++) {
             s[i] = (char)((digits[k] + '0') & 0xFF);
@@ -51,10 +50,10 @@ public class ArrayInteger { //3.0
     }
 
     boolean raiseCalcError(){
-        num1(digits.length);
+        clear(digits.length);
         return false;
     }
-    boolean add(ArrayInteger num) {      //3.4
+    boolean add(ArrayInteger num) {
         int sigMax = num.number >= number ? num.number : number; // max significant
         int l = digits.length;
         int ln = num.digits.length;
@@ -88,11 +87,7 @@ public class ArrayInteger { //3.0
     }
 
     public static void main(String[] args) {
-        ArrayInteger a = new ArrayInteger("100");
-        ArrayInteger b = new ArrayInteger("59");
-        System.out.print(a + " + " + b + " = ");
-        a.add(b);
-        System.out.println(a);
+
     }
 
 }
