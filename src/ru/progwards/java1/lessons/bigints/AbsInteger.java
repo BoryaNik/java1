@@ -1,28 +1,14 @@
 package ru.progwards.java1.lessons.bigints;
 
-    public abstract class AbsInteger{
-        protected int bytes;
-        static AbsInteger add(AbsInteger num1, AbsInteger num2) {
-            return num1.bytes >= num2.bytes ? num1.add2(num2) : num2.add2(num1);
-        }
-        protected AbsInteger add2(AbsInteger num1) {
-            return null;
-        }
-        protected byte toByte() {
-            return 0;
-        }
-        protected short toShort() {
-            return 0;
-        }
-        protected int toInt() {
-            return 0;
-        }
-
-        public static void main(String[] args) {
-            //AbsInteger num1 = new ByteInteger((byte)10);
-            //AbsInteger num2 = new ShortInteger((short)131);
-            //System.out.println(AbsInteger.add(num1, num2));
-        }
+    public abstract class AbsInteger {
+        public static AbsInteger add(AbsInteger num1, AbsInteger num2){
+        long n1 = Long.parseLong(num1.toString());
+        long n2 = Long.parseLong(num2.toString());
+        long res = n1+n2;
+        if(res > -128 && res<127)
+                return  new ByteInteger((byte)res);
+        else
+                 return new IntInteger((int)res);
 
     }
-
+    }
