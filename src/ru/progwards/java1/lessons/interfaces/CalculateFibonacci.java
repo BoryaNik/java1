@@ -18,7 +18,8 @@ public class CalculateFibonacci {
         }
     }
     public static int fiboNumber(int n) {    //  2.1 iz zadachi 3 uroka 3 funkciya
-        if(lastFibo ==null){//lastFibo.n= -1; // iz primera
+        if(lastFibo ==null){
+            lastFibo.n= -1; // iz primera
         lastFibo.fibo =0;}                  // iz primera
 
         else if (lastFibo.n == n) return lastFibo.fibo; // funkciya fiboNumber
@@ -51,7 +52,8 @@ public class CalculateFibonacci {
     }
 
     public static void main(String[] args) {
-        System.out.println(lastFibo.fibo);
+
+        //System.out.println(lastFibo.fibo);
     }
 }
 
