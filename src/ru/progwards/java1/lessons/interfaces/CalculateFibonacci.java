@@ -18,11 +18,11 @@ public class CalculateFibonacci {
         }
     }
     public static int fiboNumber(int n) {    //  2.1 iz zadachi 3 uroka 3 funkciya
-        if(lastFibo ==null){
-            lastFibo.n= -1; // iz primera
-        lastFibo.fibo =0;}                  // iz primera
 
-        else if (lastFibo.n == n) return lastFibo.fibo; // funkciya fiboNumber
+            lastFibo.n= -1;
+        lastFibo.fibo =0;                 // iz primera
+
+         if (lastFibo.n == n) return lastFibo.fibo; // funkciya fiboNumber
         //   2.4 staticheskaya peremennaya lastFibo
         //if(lastFibo==null) return lastFibo.n;
         int first = 0;
@@ -30,7 +30,6 @@ public class CalculateFibonacci {
         int b;
         int s = 1;
          while (s++ < n) {
-        //(int i=0; i<n;i++){
             b = next;
             next += first;
             first = b;
