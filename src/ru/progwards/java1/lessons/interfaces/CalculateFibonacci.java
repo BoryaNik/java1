@@ -18,9 +18,9 @@ public class CalculateFibonacci {
         }
     }
     public static int fiboNumber(int n) {    //  2.1 iz zadachi 3 uroka 3 funkciya
-
-        lastFibo.n= -1;
-        //lastFibo.fibo =0;       // iz primera
+if(lastFibo==null){
+        //lastFibo.n= -1;}
+        lastFibo.fibo =0;  }     // iz primera
 
          if (lastFibo.n == n) return lastFibo.fibo; // funkciya fiboNumber
 
