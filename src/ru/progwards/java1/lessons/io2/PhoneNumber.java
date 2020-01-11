@@ -53,7 +53,7 @@ public class PhoneNumber {
                     fot.substring(6)
             };
             String r = phoneFormatM.format(arr);
-            r = (r.contains("(0)")) ? r.replace("(0) ", "") : r;
+            r = (r.contains("(0)")) ? r.replace("(0)", "") : r;
             r = (extra != "") ? ("+" + extra + "" + r) : r;
             return (r);
         }
