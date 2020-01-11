@@ -7,7 +7,7 @@ public class PhoneNumber {
 
 
         public static final DecimalFormat phoneFormatD = new DecimalFormat("0000000000");
-        public static final MessageFormat phoneFormatM = new MessageFormat("({0}) {1}-{2}");
+        public static final MessageFormat phoneFormatM = new MessageFormat("({0}){1}-{2}");
 
         // Example Method on a Main Class
         public static void main(String[] args) {
@@ -54,7 +54,7 @@ public class PhoneNumber {
             };
             String r = phoneFormatM.format(arr);
             r = (r.contains("(0)")) ? r.replace("(0) ", "") : r;
-            r = (extra != "") ? ("+" + extra + " " + r) : r;
+            r = (extra != "") ? ("+" + extra + "" + r) : r;
             return (r);
         }
     }
