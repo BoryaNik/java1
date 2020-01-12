@@ -22,11 +22,7 @@ public class PhoneNumber {
                 e.printStackTrace();
             }
 
-            try {
-                System.out.println(format(""));
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+
 
         }
 
