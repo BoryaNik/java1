@@ -4,9 +4,9 @@ import java.text.DecimalFormat;
 import java.text.MessageFormat;
 
 public class PhoneNumber {
-    private String printPhone(Long phoneNum) {
+    public static String format(String phone) {
         StringBuilder sb = new StringBuilder(15);
-        StringBuilder temp = new StringBuilder(phoneNum.toString());
+        StringBuilder temp = new StringBuilder(phone.toString());
 
         while (temp.length() < 10)
             temp.insert(0, "0");
