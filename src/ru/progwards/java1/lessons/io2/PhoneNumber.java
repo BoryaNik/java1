@@ -13,7 +13,7 @@ public class PhoneNumber {
 
         char[] chars = temp.toString().toCharArray();
 
-        sb.append("+7(");
+        sb.append("(");
         for (int i = 0; i < chars.length; i++) {
             if (i == 3)
                 sb.append(")");//+7(123)456-8989
