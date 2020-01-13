@@ -8,7 +8,7 @@ public class PhoneNumber {
         StringBuilder sb = new StringBuilder(15);
         StringBuilder temp = new StringBuilder(phone.toString());
 
-        while (temp.length() < 10)
+        while (temp.length() < 9)
             temp.insert(0, "0");
 
         char[] chars = temp.toString().toCharArray();
@@ -26,7 +26,7 @@ public class PhoneNumber {
     }
 
     public static void main(String[] args) {
-
+        System.out.println(PhoneNumber.format("1234567890"));
     }
 }
 
