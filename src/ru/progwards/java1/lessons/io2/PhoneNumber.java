@@ -5,28 +5,17 @@ import java.text.MessageFormat;
 
 public class PhoneNumber {
     public static String format(String phone) {
-        StringBuilder sb = new StringBuilder(15);
-        StringBuilder temp = new StringBuilder(phone.toString());
-
-        while (temp.length() < 9)
-            temp.insert(0, "0");
-
-        char[] chars = temp.toString().toCharArray();
-
-        sb.append("(");
-        for (int i = 0; i < chars.length; i++) {
-            if (i == 3)
-                sb.append(")");//+7(123)456-8989
-            else if (i == 6)
-                sb.append("-");
-            sb.append(chars[i]);
+        String num = phone.replaceAll("[^\\d]", "");
+        int len = num.length();
+        if(len < 10 || len > 11) {
+            throw new RuntimeException("");
         }
+        return "+" + (num.charAt(0)=='8' ? "7" : num.substring(0,1))
+                + "(" + num.substring(1,4) + ")"
+                + num.substring(4,7) + "-" + num.substring(7);
 
-        return sb.toString();
     }
+        public static void main (String[]args){
 
-    public static void main(String[] args) {
-        System.out.println(PhoneNumber.format("1234567890"));
+        }
     }
-}
-
