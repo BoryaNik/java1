@@ -1,7 +1,9 @@
 package ru.progwards.java1.lessons.collections;
 
 import java.util.ArrayList;
+import java.util.BitSet;
 import java.util.Collection;
+import java.util.Iterator;
 
 public class Finder {
 
@@ -51,6 +53,61 @@ public class Finder {
 
             return result;
         }
+    public static boolean findSequence(Collection<Integer> numbers){
+        if (numbers == null) return false;
+        int size = numbers.size();
+        if (size == 0) return false;
+
+        BitSet s = new BitSet(size + 1);
+        int i = 1;
+        int num;
+
+        for (Iterator<Integer> iterator = numbers.iterator(); iterator.hasNext(); ) {
+            num = iterator.next();
+            if (num < 1 || num > size) {
+                return false;
+            }
+            s.set(num, true);
+            i++;
+        }
+
+        for (i = 1; i <= size; i++) {
+            if (s.get(i)) continue;
+            else return false;
+        }
+
+        return true;
+    }
+    public static String findSimilar(Collection<String> names){
+        if (names == null) return null;
+        if (names.size() == 0) return null;
+        //if (names.size() == 1) return names.iterator().next();
+
+        String maxString = "";
+        int maxCount = 0;
+        String curString = "";
+        int curCount = 0;
+        Iterator i = names.iterator();
+        while (i.hasNext()) {
+            String s = (String) i.next();
+            if (s.compareTo(curString) == 0) {
+                curCount++;
+            } else {
+                if (curCount > maxCount) {
+                    maxString = curString;
+                    maxCount = curCount;
+                }
+                curCount = 1;
+                curString = s;
+            }
+        }
+        if (curCount > maxCount) {
+            maxString = curString;
+            maxCount = curCount;
+        }
+
+        return maxString + ":" + maxCount;
+    }
 
         public static void main(String[] args) {
 
