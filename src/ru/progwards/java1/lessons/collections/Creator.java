@@ -21,22 +21,17 @@ public class Creator {
         return res;
     }
     public static Collection<Integer> fill3(int n) {
-        Collection<Integer> res = new ArrayList<>();
-        for (int i = 0; i < n; i++) {
-            switch (i % 3) {
-                case 0:
-                    res.add(i);
-                    break;
-                case 1:
-                    res.add(i * i);
-                    break;
-                case 2:
-                    res.add(i * i * i);
-            }
 
+            Collection<Integer> result = new ArrayList<>();
+            int i2;
+            for (int i = 0; i < n; i++) {
+                result.add(i);
+                i2 = i * i;
+                result.add(i2);
+                result.add(i2 * i);
+            }
+            return result;
         }
-        return res;
-    }
 
 
     public static void main(String[] args) {
