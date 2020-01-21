@@ -1,8 +1,7 @@
 package ru.progwards.java1.lessons.collections;
 
 import java.util.Iterator;
-
-public class ArrayIterator <T>implements Iterator<T> {
+public class  ArrayIterator<T> implements Iterator<T> {
     private T[] array;
     int lastIdx;
     int idx;
@@ -23,7 +22,10 @@ public class ArrayIterator <T>implements Iterator<T> {
         return array[++idx];
     }
 
+
+
     public static void main(String[] args) {
 
     }
 }
+
