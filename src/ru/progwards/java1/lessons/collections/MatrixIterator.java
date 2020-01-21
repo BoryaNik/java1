@@ -48,5 +48,9 @@ public class MatrixIterator<T>implements Iterator<T> {
         return result;
     }
 
+    public static void main(String[] args) {
+
+    }
+
 }
 
