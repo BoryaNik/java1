@@ -18,7 +18,14 @@ public class Translator {
             wordTable.put(inLang[i].toLowerCase(), outLang[i].toLowerCase());
         }
     }
-
+    public String translateWord(String word) {
+        String result = wordTable.get(word.toLowerCase());
+        if (result == null) return word;
+        if (Character.isUpperCase(word.charAt(0))) {
+            return Character.toUpperCase(result.charAt(0)) + (result.length() > 1 ? result.substring(1) : "");
+        }
+        return result;
+    }
     public String translate(String sentence) {
         Map<String, String> map = new HashMap<String, String>();
 
