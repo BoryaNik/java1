@@ -23,8 +23,10 @@ public class Translator {
         Map<String, String> map = new HashMap<String, String>();
 
         int len= sentence.length();
-        map.put("hello", "привет");
-        map.put("world", "мир");
+        map.put("make", "твори");
+        map.put("love", "любовь");
+        map.put("not","не");
+        map.put("war","войну");
 
 
         String tr ="";
