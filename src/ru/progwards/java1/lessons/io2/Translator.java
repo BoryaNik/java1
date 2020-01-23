@@ -19,7 +19,7 @@ public class Translator {
         }
     }
 
-    public String translate(String sentence) throws IOException {
+    public String translate(String sentence) {
         Map<String, String> map = new HashMap<String, String>();
 
         int len= sentence.length();
