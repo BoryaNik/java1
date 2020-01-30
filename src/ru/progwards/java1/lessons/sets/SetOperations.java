@@ -34,7 +34,8 @@ public class SetOperations {
             for(Integer set1SetElement : set1){
                 for(Integer set2SetElement : set2){
                     if(set1SetElement!=set2SetElement){
-                        //differenceSet.add(set1SetElement);
+                        differenceSet.removeAll(set2);
+
                     }
                 }
             }
