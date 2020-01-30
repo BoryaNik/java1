@@ -30,16 +30,10 @@ public class SetOperations {
             return intersectionSet;
         }
         public static Set<Integer> difference(Set<Integer> set1, Set<Integer> set2){
-            Set<Integer>differenceSet = new TreeSet<Integer>();
-            for(Integer set1SetElement : set1){
-                for(Integer set2SetElement : set2){
-                    if(set1SetElement!=set2SetElement){
-                        differenceSet.removeAll(set2);
-
-                    }
-                }
-            }
-            return differenceSet;
+            if (set1 == null) return new HashSet<Integer>();
+            Set<Integer> result = new HashSet<Integer>(set1);
+            if (set2 != null) result.removeAll(set2);
+            return result;
         }
         public static Set<Integer> symDifference(Set<Integer> set1, Set<Integer> set2){
             Set<Integer> symDifferenceSet = new TreeSet<Integer>(set1);
