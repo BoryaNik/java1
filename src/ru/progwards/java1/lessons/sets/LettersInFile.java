@@ -69,7 +69,7 @@ public class LettersInFile {
                 processFilesFromFolder(entry);
                 continue;
             }else {
-               if (entry.getName().indexOf(".txt")>0){
+               if (entry.getName().indexOf(".java")>0){
                     process(entry.getPath());
                 }
             }
@@ -77,7 +77,7 @@ public class LettersInFile {
     }
     public  static long iteration() throws IOException{
         long startTime = System.currentTimeMillis();
-        System.out.println(process("C:\\Users\\Я\\Desktop\\LettersInFile.txt"));
+        //System.out.println(process("C:\\Users\\Я\\Desktop\\LettersInFile.txt"));
    File folder = new File(".");
    processFilesFromFolder(folder);
    return System.currentTimeMillis() - startTime;
