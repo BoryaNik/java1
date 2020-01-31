@@ -31,7 +31,7 @@ public class LettersInFile {
     }
 
     public static String process2(String fileName) throws IOException {
-        String set = " ";
+        String set = "";
         FileReader fileReader = new FileReader(fileName);
         Scanner scanner = new Scanner(fileReader);
         while (scanner.hasNextLine()) {
