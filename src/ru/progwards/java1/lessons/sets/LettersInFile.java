@@ -4,19 +4,18 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
-
-public class LettersInFile {
-    public static String process1(String fileName) throws IOException {
+public class LettersInFile{
+public static String process1(String fileName) throws IOException {
         Set<Character> set = new HashSet<Character>();
         FileReader fileReader = new FileReader(fileName);
-        Scanner scanner = new Scanner(fileName);
+        Scanner scanner = new Scanner(fileReader);
         while (scanner.hasNextLine()) {
-            String str = scanner.nextLine();
-            str.toCharArray();
-            char[] charArray = str.toCharArray();
-            for (char aChar : charArray) {
-                if (Character.isLetter(aChar)) set.add(aChar);
-            }
+        String str = scanner.nextLine();
+        str.toCharArray();
+        char[] charArray = str.toCharArray();
+        for (char aChar : charArray) {
+        if (Character.isLetter(aChar)) set.add(aChar);
+        }
         }
         scanner.close();
         fileReader.close();
@@ -25,24 +24,24 @@ public class LettersInFile {
         Collections.sort(list);
         StringBuilder sb = new StringBuilder(100);
         for (Character aChar : list) {
-            sb.append(aChar);
+        sb.append(aChar);
         }
         return sb.toString();
-    }
+        }
 
-    public static String process2(String fileName) throws IOException {
+public static String process2(String fileName) throws IOException {
         String set = "";
         FileReader fileReader = new FileReader(fileName);
         Scanner scanner = new Scanner(fileReader);
         while (scanner.hasNextLine()) {
-            String str = scanner.nextLine();
-            str.toCharArray();
-            char[] charArray = str.toCharArray();
-            for (char aChar : charArray) {
-                if (Character.isLetter(aChar)) {
-                    if (set.indexOf(aChar) == -1) set += aChar;
-                }
-            }
+        String str = scanner.nextLine();
+        str.toCharArray();
+        char[] charArray = str.toCharArray();
+        for (char aChar : charArray) {
+        if (Character.isLetter(aChar)) {
+        if (set.indexOf(aChar) == -1) set += aChar;
+        }
+        }
         }
         scanner.close();
         fileReader.close();
@@ -50,42 +49,53 @@ public class LettersInFile {
         char[] charArray = set.toCharArray();
         List<Character> list = new ArrayList<>();
         for (char aChar : charArray) {
-            list.add(aChar);
+        list.add(aChar);
         }
         Collections.sort(list);
         StringBuilder sb = new StringBuilder(100);
         for (Character aChar : list) {
-            sb.append(aChar);
+        sb.append(aChar);
         }
         return sb.toString();
-    }
-    public static String process(String fileName) throws IOException{
-        return process1(fileName);
-    }
-    public static void  processFilesFromFolder(File folder) throws  IOException{
-        File[]folderEntries = folder.listFiles();
-        for (File entry : folderEntries){
-            if(entry.isDirectory()){
-                processFilesFromFolder(entry);
-                continue;
-            }else {
-               if (entry.getName().indexOf(".java")>0){
-                    process(entry.getPath());
-                }
-            }
         }
-    }
-    public  static long iteration() throws IOException{
+
+public static String process(String fileName) throws IOException {
+        return process1(fileName); //122-124
+        //return process2(fileName); //123-125
+        }
+
+public static void processFilesFromFolder(File folder) throws IOException {
+        File[] folderEntries = folder.listFiles();
+        for (File entry : folderEntries) {
+        if (entry.isDirectory()) {
+        processFilesFromFolder(entry);
+        continue;
+        } else {
+        if (entry.getName().indexOf(".java") > 0) {
+            process(entry.getPath());
+        }
+        }
+        }
+        }
+
+public static long iteration() throws IOException {
         long startTime = System.currentTimeMillis();
-        //System.out.println(process("C:\\Users\\Я\\Desktop\\LettersInFile.txt"));
-   File folder = new File(".");
-   processFilesFromFolder(folder);
-   return System.currentTimeMillis() - startTime;
-    }
+        File folder = new File(".");
+        processFilesFromFolder(folder);
+        return System.currentTimeMillis() - startTime;
+        }
 
-    public static void main(String[] args) {
-
-    }
-}
-
+public static void main(String[] args) {
+        try {
+        long allTime = 0;
+        int tryCount = 100;
+        for (int i = 0; i < tryCount; i++) {
+        allTime += iteration();
+        }
+        System.out.println(allTime / tryCount);
+        } catch (Exception e) {
+        System.out.println(e);
+        }
+        }
+        }
 
