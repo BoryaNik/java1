@@ -9,17 +9,17 @@ import java.util.Set;
 
 public class ProductAnalytics {
     private List<Shop> shops;
-    private List<Product>products;
+    private List<Product>allProducts;
     public ProductAnalytics(List<Product>products,List<Shop>shops){
-        this.products=products;
+        this.allProducts=products;
         this.shops=shops;
     }
     public Set<Product> existInAll(){
-        if(products==null|| products.size()==0)
+        if(allProducts==null|| allProducts.size()==0)
             return new HashSet<>();
         if(shops==null|| shops.size()==0)
             return new HashSet<>();
-        Set<Product>products = new HashSet<Product>();
+        Set<Product>products = new HashSet<Product>(allProducts);
         Iterator n= shops.iterator();
         while (n.hasNext()){
             products.retainAll(new HashSet<Product>(((Shop) n.next()).getProducts()));
@@ -28,10 +28,11 @@ public class ProductAnalytics {
     }
     public Set<Product>existAtListInOne(){
      return existOnlyInOne();}
+
     public Set<Product>notExistInShops(){
-        if(products==null||products.size()==0)
+        if(allProducts==null||allProducts.size()==0)
             return new HashSet<>();
-        Set<Product>products = new HashSet<Product>();
+        Set<Product>products = new HashSet<Product>(allProducts);
         if(shops==null||shops.size()==0)
             return products;
         Iterator n= shops.iterator();
@@ -43,7 +44,7 @@ public class ProductAnalytics {
 
     public Set<Product> existOnlyInOne(){
          Set<Product>products=new HashSet<Product>();
-         if(products==null||products.size()==0)
+         if(allProducts==null||allProducts.size()==0)
              return products;
          if(shops==null|| shops.size()==0)
              return products;
@@ -55,7 +56,7 @@ public class ProductAnalytics {
          for (int k=0;k<shops.size();k++){
              products3 = new HashSet<Product>(((Shop)n.next()).getProducts());
              products3.retainAll(products);
-             if(k<i){products1.addAll(products);}
+             if(k<i){products1.addAll(allProducts);}
              else if(k==i){
                  products2=products3;
                  products2.removeAll(products1);
