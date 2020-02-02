@@ -20,6 +20,10 @@ public class ProductAnalytics {
         if(shops==null|| shops.size()==0)
             return new HashSet<>();
         Set<Product>products = new HashSet<Product>();
+        Iterator n= shops.iterator();
+        while (n.hasNext()){
+            products.retainAll(new HashSet<Product>(((Shop) n.next()).getProducts()));
+        }
         return products;
     }
     public Set<Product>existAtListInOne(){
