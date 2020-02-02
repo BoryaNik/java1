@@ -14,7 +14,7 @@ public class ProductAnalytics {
         this.products=products;
         this.shops=shops;
     }
-    public Set<Product> existhAll(){
+    public Set<Product> existInAll(){
         if(products==null|| products.size()==0)
             return new HashSet<>();
         if(shops==null|| shops.size()==0)
