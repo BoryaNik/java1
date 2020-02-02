@@ -43,29 +43,30 @@ public class ProductAnalytics {
     }
 
     public Set<Product> existOnlyInOne(){
-         Set<Product>products=new HashSet<Product>();
-         if(allProducts==null||allProducts.size()==0)
-             return products;
-         if(shops==null|| shops.size()==0)
-             return products;
-         for(int i=0; i<shops.size();i++){
-             Set<Product>products1 = new HashSet<Product>();
-         Set<Product>products2 = new HashSet<Product>();
-         Set<Product>products3;
-         Iterator n = shops.iterator();
-         for (int k=0;k<shops.size();k++){
-             products3 = new HashSet<Product>(((Shop)n.next()).getProducts());
-             products3.retainAll(products);
-             if(k<i){products1.addAll(allProducts);}
-             else if(k==i){
-                 products2=products3;
-                 products2.removeAll(products1);
-             }else {products2.removeAll(products1);
-             }
-         }
-             products.addAll(products2);
-         }
-         return products;
+        Set<Product> products = new HashSet<Product>();
+        if (allProducts == null || allProducts.size() == 0) return products;
+        if (shops == null || shops.size() == 0) return products;
+        for (int i = 0; i < shops.size(); i++) {
+            Set<Product> products12 = new HashSet<Product>();
+            Set<Product> products22 = new HashSet<Product>();
+            Set<Product> productsNow;
+            Iterator it = shops.iterator();
+            for (int k = 0; k < shops.size(); k++) {
+                productsNow = new HashSet<Product>(((Shop) it.next()).getProducts());
+                productsNow.retainAll(allProducts);
+                if (k < i) {
+                    products12.addAll(productsNow);
+                } else if (k == i) {
+                    products22 = productsNow;
+                    products22.removeAll(products12);
+                } else {
+                    products22.removeAll(productsNow);
+                }
+            }
+            products.addAll(products22);
+        }
+
+        return products;
 
      }
     public static void main(String[] args) {
