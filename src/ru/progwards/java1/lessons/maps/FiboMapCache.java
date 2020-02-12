@@ -128,8 +128,13 @@ public class FiboMapCache {
         for (int i = 1; i <= 1000; i++) f.fiboNumber(i);
         System.out.println("fiboNumber cacheOn=" + true + " время выполнения " + (currentTimeMillis() - start));
     }
+    private static void test21(FiboMapCache f, int numFrom, int numTo, String caption) {
+        long start = currentTimeMillis();
+        for (int i = numFrom; i <= numTo; i++) f.fiboNumber(i);
+        System.out.println(caption + ", мс: " + (currentTimeMillis() - start));
+    }
 
     public static void main(String[] args) {
-
+        test();
     }
 }
