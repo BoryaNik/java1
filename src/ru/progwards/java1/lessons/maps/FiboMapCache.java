@@ -134,7 +134,7 @@ public class FiboMapCache {
 
     }
 
-    private static void test2() {
+  /*  private static void test2() {
         FiboMapCache f = new FiboMapCache(true);
         final int NUM_FROM = 1;
         final int NUM_TO = 1_000;
@@ -150,11 +150,11 @@ public class FiboMapCache {
 
     }
 
-    private static void test21(FiboMapCache f, int numFrom, int numTo, String caption) {
+  /*private static void test21(FiboMapCache f, int numFrom, int numTo, String caption) {
         long start = currentTimeMillis();
         for (int i = numFrom; i <= numTo; i++) f.fiboNumber(i);
         System.out.println(caption + ", мс: " + (currentTimeMillis() - start));
-    }
+    }*/
 
     public static void main(String[] args) {
 
