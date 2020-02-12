@@ -134,7 +134,7 @@ public class FiboMapCache {
 
     }
 
-    public static void test2() {
+    private static void test2() {
         FiboMapCache f = new FiboMapCache(true);
         final int NUM_FROM = 1;
         final int NUM_TO = 1_000;
@@ -157,6 +157,6 @@ public class FiboMapCache {
     }
 
     public static void main(String[] args) {
-        test2();
+
     }
 }
