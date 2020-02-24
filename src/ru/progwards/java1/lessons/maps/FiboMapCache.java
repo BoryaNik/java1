@@ -1,11 +1,12 @@
 package ru.progwards.java1.lessons.maps;
 
+import org.jetbrains.annotations.Nullable;
+
 import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 
 import static java.lang.System.currentTimeMillis;
-
 
 public class FiboMapCache {
     private boolean cacheOn;
@@ -14,8 +15,6 @@ public class FiboMapCache {
         this.cacheOn = cacheOn;
         clearCahe();
     }
-
-
     public void clearCahe() {
         if (cacheOn) {
             if (fiboCache != null) fiboCache.clear();
@@ -29,12 +28,9 @@ public class FiboMapCache {
         }
     }
 
-
     public BigDecimal fiboNumber(int n) {
         return cacheOn ? fiboCacheMap(n) : fiboNoCache(n);
     }
-
-
     Map<Integer, BigDecimal> fiboCache;
     int lastFiboCache_n;
 
@@ -58,13 +54,9 @@ public class FiboMapCache {
                 } catch (InterruptedException ex) {
                 }
         }
-
         lastFiboCache_n = n;
         return f2;
     }
-
-
-
     int lastFibo_n = 1;
     BigDecimal lastFibo_f1 = BigDecimal.ZERO;
     BigDecimal lastFibo_f2 = BigDecimal.ONE;
@@ -99,8 +91,6 @@ public class FiboMapCache {
         lastFibo_f2 = f2;
         return f2;
     }
-
-
     public BigDecimal fiboNoCache(int n) {
         try {
             Thread.sleep(1);
@@ -133,8 +123,7 @@ public class FiboMapCache {
         System.out.println("fiboNumber cacheOn=" + true + " время выполнения " + (currentTimeMillis() - start));
 
     }
-
-  /*  private static void test2() {
+    public static void test2() {
         FiboMapCache f = new FiboMapCache(true);
         final int NUM_FROM = 1;
         final int NUM_TO = 1_000;
@@ -149,14 +138,13 @@ public class FiboMapCache {
         test21(f, NUM_FROM, NUM_TO, "Наполняем кеш перебором с " + NUM_FROM + " до " + NUM_TO);
 
     }
-
-  /*private static void test21(FiboMapCache f, int numFrom, int numTo, String caption) {
+    private static void test21(FiboMapCache f, int numFrom, int numTo, @Nullable String caption) {
         long start = currentTimeMillis();
         for (int i = numFrom; i <= numTo; i++) f.fiboNumber(i);
         System.out.println(caption + ", мс: " + (currentTimeMillis() - start));
-    }*/
+    }
 
-    public static void main(String[] args) {
-
+    public static void main(@Nullable String[] args) {
+        test2();
     }
 }
