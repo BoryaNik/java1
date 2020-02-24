@@ -122,7 +122,7 @@ public class FiboMapCache {
         System.out.println("fiboNumber cacheOn=" + true + " время выполнения " + (currentTimeMillis() - start));
 
     }
-    public static void test2() {
+   /* public static void test2() {
         FiboMapCache f = new FiboMapCache(true);
         final int NUM_FROM = 1;
         final int NUM_TO = 1_000;
@@ -141,9 +141,9 @@ public class FiboMapCache {
         long start = currentTimeMillis();
         for (int i = numFrom; i <= numTo; i++) f.fiboNumber(i);
         System.out.println(caption + ", мс: " + (currentTimeMillis() - start));
-    }
+    }*/
 
     public static void main( String[] args) {
-        test2();
+        test();
     }
 }
