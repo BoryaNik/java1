@@ -1,6 +1,5 @@
 package ru.progwards.java1.lessons.maps;
 
-import org.jetbrains.annotations.Nullable;
 
 import java.math.BigDecimal;
 import java.util.HashMap;
@@ -138,13 +137,13 @@ public class FiboMapCache {
         test21(f, NUM_FROM, NUM_TO, "Наполняем кеш перебором с " + NUM_FROM + " до " + NUM_TO);
 
     }
-    private static void test21(FiboMapCache f, int numFrom, int numTo, @Nullable String caption) {
+    private static void test21(FiboMapCache f, int numFrom, int numTo, String caption) {
         long start = currentTimeMillis();
         for (int i = numFrom; i <= numTo; i++) f.fiboNumber(i);
         System.out.println(caption + ", мс: " + (currentTimeMillis() - start));
     }
 
-    public static void main(@Nullable String[] args) {
+    public static void main( String[] args) {
         test2();
     }
 }
